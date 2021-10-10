@@ -1,0 +1,54 @@
+#!/usr/bin/env php
+<?php
+
+use mir\commands\CleanSchemasTmpTables;
+use mir\commands\CleanSchemaTmpTables;
+use mir\commands\CleanTmps;
+use mir\commands\CleanTmpTablesFiles;
+use mir\commands\CleanTmpTablesFilesMulti;
+use mir\commands\GitUpdate;
+use mir\commands\SchemaAdd;
+use mir\commands\SchemaCron;
+use mir\commands\SchemaCrons;
+use mir\commands\SchemaDecode;
+use mir\commands\Install;
+use mir\commands\SchemaDuplicate;
+use mir\commands\SchemaPasswd;
+use mir\commands\SchemasCrons;
+use mir\commands\SchemasUpdates;
+use mir\commands\SchemaUpdate;
+use mir\commands\Vacuum;
+use mir\common\configs\MultiTrait;
+use mir\config\Conf;
+
+require_once __DIR__ . '/../vendor/autoload.php';
+
+use Symfony\Component\Console\Application;
+
+$app = new Application();
+if (class_exists(Conf::class)) {
+    $app->add(new SchemaDecode());
+    $app->add(new SchemaCrons());
+    $app->add(new SchemaCron());
+
+
+    $app->add(new CleanTmps());
+    $app->add(new CleanSchemaTmpTables());
+
+    $app->add(new SchemaUpdate());
+    $app->add(new SchemaPasswd());
+    $app->add(new Vacuum());
+    $app->add(new GitUpdate());
+
+    if (key_exists(MultiTrait::class, class_uses(Conf::class, false))) {
+        $app->add(new SchemasCrons());
+        $app->add(new CleanSchemasTmpTables());
+        $app->add(new CleanTmpTablesFilesMulti());
+        $app->add(new SchemasUpdates());
+        $app->add(new SchemaDuplicate());
+        $app->add(new SchemaAdd());
+    }
+} else {
+    $app->add(new Install());
+}
+$app->run();

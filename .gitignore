@@ -1,0 +1,9 @@
+http/fls/*/
+http/fls/*
+.DS_Store
+Conf.php
+myLogs/
+mirTmpfiles/
+.idea
+/vendor/
+CalculateExtensions.php

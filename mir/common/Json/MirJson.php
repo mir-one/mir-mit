@@ -11,7 +11,7 @@ use mir\common\errorException;
 
 class MirJson extends MirJsonParcer
 {
-    const STATE_IN_Mir_PARAM = 14;
+    const STATE_IN_MIR_PARAM = 14;
     protected $MirParamStarts;
     /**
      * @var callable
@@ -74,7 +74,7 @@ class MirJson extends MirJsonParcer
             $this->buffer .= $c;
         } elseif ('#' === $c || '$' === $c || '@' === $c) {
             $this->buffer .= $c;
-            $this->state = self::STATE_IN_Mir_PARAM;
+            $this->state = self::STATE_IN_MIR_PARAM;
             $this->MirParamStarts = ['ultimate' => "", '[' => 0];
         } else {
             $this->throwParseError('Unexpected character for value: ' . $c);
@@ -110,7 +110,7 @@ class MirJson extends MirJsonParcer
         }
 
         switch ($this->state) {
-            case self::STATE_IN_Mir_PARAM:
+            case self::STATE_IN_MIR_PARAM:
                 $this->processMirParam($char);
                 break;
             case self::STATE_IN_STRING:

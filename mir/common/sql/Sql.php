@@ -42,7 +42,7 @@ class Sql
     {
         if ($this->isRollbacked) {
             $this->Log->error('Try to get rollbacked SQL', debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS));
-            throw new SqlException('Transaction was rollbacked. Create new Conf and Mir for correct work with Mir');
+            throw new SqlException('Transaction was rollbacked. Create new Conf and Mir for correct work with MIR');
         }
         return $this->PDO;
     }

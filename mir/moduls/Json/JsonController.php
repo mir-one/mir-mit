@@ -143,7 +143,7 @@ class JsonController extends Controller
                 $context = stream_context_create(
                     [
                         'http' => [
-                            'header' => "Content-type: application/x-www-form-urlencoded\r\nUser-Agent: Mir\r\nConnection: Close\r\n\r\n",
+                            'header' => "Content-type: application/x-www-form-urlencoded\r\nUser-Agent: MIR\r\nConnection: Close\r\n\r\n",
                             'method' => 'POST',
                             'content' => $data
                         ]

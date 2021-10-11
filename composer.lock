@@ -4172,8 +4172,8 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mir-one/mir-front/zipball/5e7b5610219f4c4473e5a7dfa80c87172e659f25",
-                "reference": "5e7b5610219f4c4473e5a7dfa80c87172e659f25",
+                "url": "https://api.github.com/repos/mir-one/mir-front/zipball/dev",
+                "reference": "",
                 "shasum": ""
             },
             "type": "package",

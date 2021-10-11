@@ -54,7 +54,7 @@
     <?php
     include static::$contentTemplate; ?>
 </div>
-<div id="Mir_FOOTER">
+<div id="MIR_FOOTER">
     <?= $mirFooter ?? '' ?>
 
 </div>

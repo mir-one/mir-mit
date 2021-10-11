@@ -4163,27 +4163,27 @@
             "time": "2020-07-12T23:59:07+00:00"
         },
         {
-            "name": "mir-one/mir-front",
+            "name": "totumonline/totum-front",
             "version": "dev-dev",
             "source": {
                 "type": "git",
-                "url": "https://github.com/mir-one/mir-front.git",
+                "url": "https://github.com/totumonline/totum-front.git",
                 "reference": "5e7b5610219f4c4473e5a7dfa80c87172e659f25"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mir-one/mir-front/zipball/",
-                "reference": "",
+                "url": "https://api.github.com/repos/totumonline/totum-front/zipball/5e7b5610219f4c4473e5a7dfa80c87172e659f25",
+                "reference": "5e7b5610219f4c4473e5a7dfa80c87172e659f25",
                 "shasum": ""
             },
             "type": "package",
             "license": [
                 "MIT"
             ],
-            "description": "mir frontend",
+            "description": "totum frontend",
             "support": {
-                "source": "https://github.com/mir-one/mir-front/tree/dev",
-                "issues": "https://github.com/mir-one/mir-front/issues"
+                "source": "https://github.com/totumonline/totum-front/tree/dev",
+                "issues": "https://github.com/totumonline/totum-front/issues"
             },
             "time": "2020-11-18T10:02:57+00:00"
         },
